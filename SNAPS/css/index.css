@@ -1,0 +1,585 @@
+/* Carrosel Topo */
+
+.slider {
+  width: 100%;
+  height: 500px;
+  margin-top: 80px;
+}
+
+.slide_viewer {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide_group {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  display: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+.slide:nth-of-type(1) {
+  background-image: url('../assets/images/slider/1354x500_1.jpg');
+}
+
+.slide:nth-of-type(2) {
+  background-image: url('../assets/images/slider/1354x500_2.jpg');
+}
+
+.slide:nth-of-type(3) {
+  background-image: url('../assets/images/slider/1354x500_3.jpg');
+}
+
+.slide:nth-of-type(4) {
+  background-image: url('../assets/images/slider/1354x500_4.jpg');
+}
+
+.slide:nth-of-type(5) {
+  background-image: url('../assets/images/slider/1354x500_5.jpg');
+}
+
+.directional_nav {
+  margin: 0 auto;
+  position: relative;
+  top: -250px;
+}
+
+.previous_btn {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+
+.next_btn {
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.previous_btn, .next_btn {
+  cursor: pointer;
+  height: 500px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  width: 200px;
+}
+
+.previous_btn:hover, .next_btn:hover {
+  opacity: 1;
+}
+
+.previous_btn:hover svg,
+.next_btn:hover svg{
+    background: linear-gradient(272.04deg, rgba(35, 69, 132, 0.8) 0%, rgba(125, 12, 14, 0.8) 100%);
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 0.5px #fff inset;
+}
+
+@media only screen and (max-width: 767px) {
+  .previous_btn {
+    left: 50px;
+  }
+  .next_btn {
+    right: 50px;
+  }
+}
+
+/* Fim Carrosel Topo */
+
+/* Carrosel SNAPS */
+/*.carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
+  opacity: 1 !important;
+  z-index: 3;
+}*/
+
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(1), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(4) {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+.container {
+  width: 800px;
+  min-width: 800px;
+  margin: 50px auto;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid;
+  border-image: linear-gradient(to right, #7D0C0E 0%,#234584 100%) 1 stretch repeat;
+}
+
+.carousel > input[type=radio] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+}
+
+.carousel > input[type=radio]:checked ~ .carousel__items .carousel__item,
+.carousel > input[type=radio]:checked ~ .carousel__prev > label,
+.carousel > input[type=radio]:checked ~ .carousel__next > label {
+  opacity: 0;
+}
+
+.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) {
+  opacity: 1;
+}
+
+.carousel > input[type=radio]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
+  background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+  opacity: 90%;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) {
+  opacity: 1;
+}
+
+.carousel > input[type=radio]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
+  background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+  opacity: 90%;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) {
+  opacity: 1;
+}
+
+.carousel > input[type=radio]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
+  background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+  opacity: 90%;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
+  opacity: 1;
+}
+
+.carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+  background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+  opacity: 90%;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel__items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 507px;
+  position: relative;
+}
+
+.carousel__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+}
+
+.carousel__item img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.carousel__prev > label, .carousel__next > label {
+  background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+  border: 3px solid #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.carousel__prev > label:hover, .carousel__prev > label:focus, .carousel__next > label:hover, .carousel__next > label:focus {
+  opacity: 0.5 !important;
+}
+
+.carousel__prev > label:before, .carousel__prev > label:after, .carousel__next > label:before, .carousel__next > label:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+.carousel__prev > label:before, .carousel__next > label:before {
+  background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  width: 40%;
+  height: 40%;
+  top: 20%;
+}
+
+.carousel__prev > label {
+  left: 3%;
+}
+
+.carousel__prev > label:before {
+  left: 40%;
+  top: 30%;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.carousel__next > label {
+  right: 3%;
+}
+
+.carousel__next > label:before {
+  left: 20%;
+  top: 30%;
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+}
+
+.carousel__nav {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+}
+
+.carousel__nav > label {
+  border: 2px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0.125%;
+  width: 22px;
+  height: 22px;
+}
+/* Fim Carrosel Topo */
+
+/* Conteúdo Sessão Conteúdo Principal */
+.conteudo-principal{
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-top: 80px;
+    width: 75%;
+    text-align: center;
+}
+
+.conteudo-principal p{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.conteudo-principal p .espacamento-comeco{
+    margin-left: 25px;
+}
+
+.conteudo-principal ul{
+    margin-left: 25px;
+}
+
+.conteudo-principal h3{
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.conteudo-principal img{
+    margin-bottom: 20px;
+}
+/* Fim Conteúdo Sessão Conteúdo Principal */
+
+/* Botão Download Sessão Visão Geral SNAPS */
+#botao-snaps{
+    width: 45%;
+    border-radius: 50px;
+    margin: 0 auto;
+    transition: all .5s;
+}
+
+#botao-snaps:hover{
+    transition: all .5s;
+    width: 48%;
+}
+
+#botao-snaps a{
+    text-decoration: none;
+    display: block;
+}
+
+#botao-snaps .botao-download{
+    text-align: center;
+    width: 100%;
+    border-radius: 50px;
+    background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+    padding: 5px 0px;
+    display: block;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#botao-snaps:hover .botao-download{
+    margin: 10px 0;
+    background: linear-gradient(272.04deg, #7D0C0E 0%, #234584 100%);
+    transition: all .5s;
+}
+
+#botao-snaps .botao-download h4{
+    font-size: 18px;
+    margin: auto auto;
+    padding: 8px 0;
+    width: 100%;
+    color: white;
+}
+/* Fim Botão Download Sessão Visão Geral SNAPS */
+
+/* Sessão Integra */
+.container-integra{
+    width: 100%;
+    background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
+    padding: 30px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+}
+
+.container-integra h2{
+    font-size: 26px;
+    color: white;
+    margin: 10px 0 0 30px
+}
+
+.container-integra h2 b{
+    font-weight: bold;
+}
+
+.conteudo-integra{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteudo-integra .img-integra{
+    width: 49%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo-integra .descricao-integra{
+    width: 49%;
+    padding: 60px 30px 30px 0px;
+}
+
+.conteudo-integra .descricao-integra h3{
+    font-size: 24px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.conteudo-integra .descricao-integra h3 b{
+    font-weight: 100px;
+}
+
+.conteudo-integra .descricao-integra p{
+    font-size: 16px;
+    color: white;
+}
+/* Sessão Integra */
+
+/* Sessão Simuladores */
+.simuladores{
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 150px;
+}
+
+.simuladores .descricao-simuladores{
+    width: 85%;
+    margin: 0 auto;
+    padding: 0 30px 30px 30px;
+    text-align: center;  
+}
+
+.simuladores .descricao-simuladores h2{
+    font-size: 26px;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.simuladores .descricao-simuladores p{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.simuladores .box-simuladores{
+    width: 100%;
+}
+
+.simuladores .box-simuladores .row-1, .row-2{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.simuladores .box-simuladores .row-1 .item1:hover h3,
+.simuladores .box-simuladores .row-1 .item2:hover h3,
+.simuladores .box-simuladores .row-2 .item1:hover h3,
+.simuladores .box-simuladores .row-2 .item2:hover h3{
+    transition: 0.3s ease-in;
+    opacity: 100%;
+    color: #fff;
+}
+
+.simuladores .box-simuladores .row-1 .item1:hover .titulo-box-simulador,
+.simuladores .box-simuladores .row-1 .item2:hover .titulo-box-simulador,
+.simuladores .box-simuladores .row-2 .item1:hover .titulo-box-simulador,
+.simuladores .box-simuladores .row-2 .item2:hover .titulo-box-simulador{
+    transition: 0.3s ease-in;
+    background-color: black;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-cardio{
+    background-image: url(../assets/images/simuladores-container/cardio.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-cardio .titulo-box-simulador,
+.simuladores .box-simuladores .row-1 .simulador-gastro .titulo-box-simulador,
+.simuladores .box-simuladores .row-1 .simulador-glandulas .titulo-box-simulador,
+.simuladores .box-simuladores .row-2 .simulador-metabo .titulo-box-simulador,
+.simuladores .box-simuladores .row-2 .simulador-olhos .titulo-box-simulador,
+.simuladores .box-simuladores .row-2 .simulador-urogenital .titulo-box-simulador{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(272.04deg, rgba(35, 69, 132, 0.8) 0%, rgba(125, 12, 14, 0.8) 100%);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: 0.3s ease-in;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-cardio h3,
+.simuladores .box-simuladores .row-1 .simulador-gastro h3,
+.simuladores .box-simuladores .row-1 .simulador-glandulas h3,
+.simuladores .box-simuladores .row-2 .simulador-metabo h3,
+.simuladores .box-simuladores .row-2 .simulador-olhos h3,
+.simuladores .box-simuladores .row-2 .simulador-urogenital h3{
+    font-size: 22px;
+    opacity: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #c3c3c3;
+    padding: 20px 0;
+    margin: 0;
+    transition: 0.3s ease-in;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-gastro{
+    background-image: url(../assets/images/simuladores-container/gastro.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-glandulas{
+    background-image: url(../assets/images/simuladores-container/endocrino.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-2 .simulador-metabo{
+    background-image: url(../assets/images/simuladores-container/metabo.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-2 .simulador-olhos{
+    background-image: url(../assets/images/simuladores-container/olho.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-2 .simulador-urogenital{
+    background-image: url(../assets/images/simuladores-container/uro.jpg);
+    background-size: 100%;
+    position: relative;
+}
+
+.simuladores .box-simuladores .row-1 .simulador-cardio, .simulador-gastro, .simulador-glandulas,
+.simuladores .box-simuladores .row-2 .simulador-metabo, .simulador-olhos, .simulador-urogenital{
+    width: 320px;
+    height: 330px;
+    background-color: grey;
+    border-radius: 20px;
+}
+
+.simuladores .box-simuladores .row-1 .titulo{
+    background-color: black;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.simuladores .box-simuladores .row-1 .titulo h3{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+/* Sessão Simuladores */
+
+/* Visualização Layout de outros dispositivos */
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    .simuladores .box-simuladores .row-1 .item1:nth-child(1n+1),
+    .simuladores .box-simuladores .row-2 .item1:nth-child(1n+1){
+        margin-right: 40px;
+    }
+
+    .simuladores .box-simuladores .row-1 .item2:nth-child(1n+1),
+    .simuladores .box-simuladores .row-2 .item2:nth-child(1n+1){
+        margin: 0;
+    }
+}
