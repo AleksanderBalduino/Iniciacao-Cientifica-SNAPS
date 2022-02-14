@@ -21,6 +21,12 @@ body{
     font-weight: 400;
 }
 
+.container {
+  width: 800px;
+  min-width: 800px;
+  margin: 50px auto;
+}
+
 /* Configurações Preloader */
 #pre-loader {
   position: fixed;
@@ -163,11 +169,11 @@ button.back-to-top.show{
     display: block;
     background: linear-gradient(272.04deg, #234584 0%, #7D0C0E 100%);
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     right: 25px;
     bottom: 25px;
-    height: 65px;
-    width: 65px;
+    height: 55px;
+    width: 55px;
     visibility: visible;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
@@ -181,10 +187,10 @@ button.back-to-top.show:active{
 }
 /* Botão voltar ao topo */
 
-/* Footer */
+/* Footer
 body footer{
     width: 100%;
-    height: 592px;
+    height: 500px;
 }
 
 body footer .footer-container{
@@ -260,7 +266,7 @@ footer .footer-container .links-rodape .col4-link img{
 body footer .footer-container .patrocinadores-rodape{
     width: 100%;
     display: flex;
-    margin: 200px auto 0 auto;
+    margin: 120px auto 0 auto;
 }
 
 body footer .footer-container .patrocinadores-rodape{
@@ -280,10 +286,163 @@ body footer .direitos-rodape{
 }
 
 body footer .direitos-rodape h3{
-    padding-top: 13px;
+    padding-top: 12px;
     text-align: center;
     color: white;
     font-size: 14px;
+}
+Fim Footer */
+
+/* Footer */
+.site-footer
+{
+  background-color:#26272b;
+  padding:35px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+
+.site-footer .about-us{
+    width: 48%;
+    margin-right: 4%;
+}
+
+.site-footer .links-cont{
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.site-footer .links-cont .quick-links{
+    margin-left: 15%;
+}
+
+.container{
+    width: 100%;
+}
+
+.row-margin{
+    margin: 0;
+}
+
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5;
+}
+
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+  transition: 0.3s ease-in-out;
+}
+.site-footer a:hover
+{
+  color:#fff;
+  text-decoration:none;
+  transition: 0.3s ease-in-out;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373;
+  transition: 0.3s ease-in-out;
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  transition: 0.3s ease-in-out;
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+.site-footer .social-icons
+{
+  text-align: right;
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
 }
 /* Fim Footer */
 
@@ -296,20 +455,7 @@ body footer .direitos-rodape h3{
 
 /* Desktop */
 @media only screen and (min-width: 1024px) {
-    body footer .footer-container .patrocinadores-rodape .patrocinador1 img,
-    body footer .footer-container .patrocinadores-rodape .patrocinador2 img{
-        width: 65%;
-        margin: 0 auto;
-    }
 
-    body footer .footer-container .patrocinadores-rodape .patrocinador1:nth-child(1n+1){
-        margin-right: 4%;
-    }
-
-    body footer .footer-container .patrocinadores-rodape .patrocinador2:nth-child(1n+1){
-        margin: 0;
-        padding-top: 13px;
-    }
 }
 
 /* ------------------------ */

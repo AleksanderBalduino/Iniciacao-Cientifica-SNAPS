@@ -33,7 +33,7 @@ openSignIn = () =>{
   setTimeout(function(){
     accountForm.style.display = "flex";
     accountForm.classList += " form-left-slide-in";
-  },200);
+  },400);
 }
 
 // Open the Sign Up page
@@ -57,9 +57,70 @@ openSignUp = () =>{
   setTimeout(function(){
     signinForm.style.display = "flex";
     signinForm.classList += " form-right-slide-in";
-  }, 200);
+  }, 400);
 }
 
 // When a 'switch' button is pressed, switch page
 openSignUpButton.addEventListener("click", openSignUp, false);
 openSignInButton.addEventListener("click", openSignIn, false);
+
+/* Botão Show Hide Password */
+function ShowHidePasswordLogin() {
+  var x = document.getElementById("password-input-login");
+  if (x.type === "password") {
+    x.type = "text";
+    document.getElementById("show-hide-img-switch").src="../assets/images/show-password.png";
+  } else {
+    x.type = "password";
+    document.getElementById("show-hide-img-switch").src="../assets/images/hide-password.png";
+  }
+}
+
+function ShowHidePasswordCadastro() {
+  var x = document.getElementById("password-input-cadastro");
+  if (x.type === "password") {
+    x.type = "text";
+    document.getElementById("show-hide-img-switch").src="../assets/images/show-password.png";
+  } else {
+    x.type = "password";
+    document.getElementById("show-hide-img-switch").src="../assets/images/hide-password.png";
+  }
+}
+
+function ShowHidePasswordConfirmCadastro() {
+  var x = document.getElementById("password-confirm-input-cadastro");
+  if (x.type === "password") {
+    x.type = "text";
+    document.getElementById("show-hide-img-switch").src="../assets/images/show-password.png";
+  } else {
+    x.type = "password";
+    document.getElementById("show-hide-img-switch").src="../assets/images/hide-password.png";
+  }
+}
+
+function ReloadPage_Reset() {
+  document.getElementById('email-input-login').value='';
+  document.getElementById('email-input-cadastro').value='';
+  document.getElementById('f-option').checked='checked';
+}
+
+function show1(){
+  document.getElementById('sign-up-form-professores').style.display ='block';
+  document.getElementById('sign-up-form-alunos').style.display ='none';
+  document.getElementById('sign-up-form-outros').style.display ='none';
+  document.getElementById('sign-up-form-professores').className = 'content-animation';
+}
+
+function show2(){
+  document.getElementById('sign-up-form-professores').style.display = 'none';
+  document.getElementById('sign-up-form-alunos').style.display = 'block';
+  document.getElementById('sign-up-form-outros').style.display = 'none';
+  document.getElementById('sign-up-form-alunos').className = 'content-animation';
+}
+
+function show3(){
+  document.getElementById('sign-up-form-professores').style.display = 'none';
+  document.getElementById('sign-up-form-alunos').style.display = 'none';
+  document.getElementById('sign-up-form-outros').style.display = 'block';
+  document.getElementById('sign-up-form-outros').className = 'content-animation';
+}

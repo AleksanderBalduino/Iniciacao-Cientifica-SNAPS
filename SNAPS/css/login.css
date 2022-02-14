@@ -1,10 +1,12 @@
 :root{
-  --form-height:550px;
-  --form-width: 900px;
-  /*  Sea Green */
-  --left-color: #9fdeaf;
-  /*  Light Blue  */
-  --right-color: #96dbe2;
+  --form-height:600px;
+  --form-width: 1100px;
+
+  --left-color: #fff;
+  --right-color: #fff;
+
+  --white-color: #fff;
+  --black-color: #000;
 }
 
 .container-lg{
@@ -27,10 +29,10 @@
   height: 100%;
   position: absolute;
   z-index: 100;
-  background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+  background-image: linear-gradient(272.04deg, rgba(35, 69, 132, 1) 0%, rgba(125, 12, 14, 1) 100%);
   border-radius: 10px;
-  color: white;
-  clip: rect(0, 385px, var(--form-height), 0);
+  color: black;
+  clip: rect(0, 450px, var(--form-height), 0);
 }
 
 .open-sign-up{
@@ -44,7 +46,7 @@
 .overlay .sign-in, .overlay .sign-up{
   /*  Width is 385px - padding  */
   --padding: 50px;
-  width: calc(385px - var(--padding) * 2);
+  width: calc(450px - var(--padding) * 2);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -80,50 +82,152 @@
 
 .overlay h1{
   margin: 0px 5px;
-  font-size: 2.1rem;
+  font-size: 36px;
+  color: var(--white-color);
 }
 
 .overlay p{
+  font-size: 16px;
   margin: 20px 0px 30px;
   font-weight: 200;
+  width: 350px;
+  color: var(--white-color);
 }
 /* 
 ------------------------
       Buttons
 ------------------------
 */
-.switch-button, .control-button{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 140px;
-  height: 40px;
-  font-size: 14px;
-  text-transform: uppercase;
-  background: none;
-  border-radius: 20px;
-  color: white;
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 250px 0 0 0 var(--white-color);
 }
 
-.switch-button{
+.sign-up button:hover, .sign-up button:focus {
+  border-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.sign-in button:hover, .sign-in button:focus {
+  border-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.sign-up button, .sign-in button {
+  color: var(--white-color);
+  transition: 0.5s;
+  background: none;
   border: 2px solid;
 }
 
-.control-button{
-  border: none;
-  margin-top: 15px;
+.switch-button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  text-transform: uppercase;
 }
 
-.switch-button:focus, .control-button:focus{
+.switch-button{
+  border: 2px solid #fff;
+  color: var(--white-color);
+  font-size: 14px;
+  border-radius: 20px;
+  height: 40px;
+  background: none;
+}
+
+.switch-button:focus{
   outline:none;
 }
 
-.control-button.up{
-  background-color: var(--left-color);
+.switch-button:hover{
+  cursor: pointer;
 }
 
-.control-button.in{
-  background-color: var(--right-color);
+.buttons-login,
+.button-cadastro{
+  margin-top: 50px;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons a.button {
+  width: 400px;
+  height: 50px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  display: inline-block;
+  color: var(--white-color);
+  text-decoration: none;
+  position: relative;
+  transition: 0.25s ease-in-out;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.buttons a.button.login,
+.buttons a.button.cadastro{
+  background: linear-gradient(272.04deg, rgba(35, 69, 132, 1) 0%, rgba(125, 12, 14, 1) 100%);
+  box-shadow: 0px 4px 15px black;
+}
+
+.buttons a.button.login-google{
+  background: linear-gradient(90deg, hsla(5, 81%, 56%, 1) 0%, hsla(45, 97%, 50%, 1) 33%, hsla(136, 53%, 43%, 1) 67%, hsla(217, 89%, 61%, 1) 100%);
+  box-shadow: 0px 4px 15px black;
+}
+
+.buttons a.button.login-facebook{
+  background: rgba(59, 89, 152, 1.0);
+  box-shadow: 0px 4px 15px black;
+}
+
+.buttons a.button:before, .buttons a.button:after, .buttons a.button span {
+  transition: 0.25s ease-in-out;
+}
+
+.buttons a.button.login,
+.buttons a.button.cadastro {
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons a.button.login span,
+.buttons a.button.cadastro span {
+  display: block;
+  position: relative;
+  bottom: 0px;
+  text-transform: initial;
+}
+
+.buttons a.button.login:before,
+.buttons a.button.cadastro:before {
+  content: "Lorem Ipsum";
+  text-transform: initial;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  top: -100%;
+  left: 0;
+  position: absolute;
+}
+
+.buttons a.button.login:hover span,
+.buttons a.button.cadastro:hover span {
+  bottom: -56px;
+}
+
+.buttons a.button.login:hover:before,
+.buttons a.button.cadastro:hover:before {
+  top: 0%;
 }
 
 /* 
@@ -136,14 +240,13 @@
   height: 100%;
   position: absolute;
   border-radius: 10px;
-  background-color: #fff;
+  background: #fff;
 }
 
 .form .sign-in, .form .sign-up{
   --padding: 50px;
   position:absolute;
-    /*  Width is 100% - 385px - padding  */
-  width: calc(var(--form-width) - 385px - var(--padding) * 2);
+  width: calc(var(--form-width) - 450px - var(--padding) * 2);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -182,32 +285,36 @@
   animation: form-slide-out-left 1s;
 }
 
-.form .sign-in h1{
-  color: var(--right-color);
+.form .sign-in h1, .form .sign-up h1{
+  color: #000;
   margin: 0;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 34px;
 }
 
-.form .sign-up h1{
-  color: var(--left-color);
-  margin: 0;
-}
-
-.social-media-buttons{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 15px;
-}
-
-.social-media-buttons .icon{
-  width: 40px;
-  height: 40px;
-  border: 1px solid #dadada;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 7px;
+@supports (mix-blend-mode: lighten) {
+.gradient1 {
+    display: inline-block;
+    position: relative;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: multiply;
+  }
+.gradient1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right,#7D0C0E, #234584);
+    pointer-events: none;
+  }
+.gradient1::before {
+    mix-blend-mode: screen;
+  }
 }
 
 .small{
@@ -217,38 +324,295 @@
   margin: 5px;
 }
 
-.social-media-buttons .icon svg{
-  width: 25px;
-  height: 25px;
-}
-
-#sign-in-form input, #sign-up-form input{
+#sign-in-form input,
+#sign-up-form-professores input,
+#sign-up-form-alunos input,
+#sign-up-form-outros input{
   margin: 12px;
-  font-size: 14px;
-  padding: 15px;
-  width: 260px;
+  font-size: 16px;
+  padding: 10px;
   font-weight: 300;
-  border: none;
-  background-color: #e4e4e494;
+  border: 1px solid var(--black-color);
+  border-radius: 10px;
+  background-color: #fff;
   font-family: 'Helvetica Neue', sans-serif;
   letter-spacing: 1.5px;
   padding-left: 20px;
 }
 
-#sign-in-form input::placeholder{
+#sign-in-form input::placeholder,
+#sign-up-form-professores input::placeholder,
+#sign-up-form-alunos input::placeholder,
+#sign-up-form-outros input::placeholder{
   letter-spacing: 1px;
+  color: #000;
+  font-weight: 400;
+}
+
+#sign-in-form input[type=email]:focus,
+#sign-in-form input[type=password]:focus,
+#sign-up-form-professores input[type=email]:focus,
+#sign-up-form-professores input[type=password]:focus,
+#sign-up-form-alunos input[type=email]:focus,
+#sign-up-form-alunos input[type=password]:focus,
+#sign-up-form-outros input[type=email]:focus,
+#sign-up-form-outros input[type=password]:focus{
+  outline: none;
+}
+
+#sign-in-form input[type=email]:focus::placeholder,
+#sign-in-form input[type=password]:focus::placeholder,
+#sign-up-form-professores input[type=email]:focus::placeholder,
+#sign-up-form-professores input[type=password]:focus::placeholder,
+#sign-up-form-alunos input[type=email]:focus:placeholder,
+#sign-up-form-alunos input[type=password]:focus:placeholder,
+#sign-up-form-outros input[type=email]:focus:placeholder,
+#sign-up-form-outros input[type=password]:focus:placeholder{
+  font-weight: 500;
+}
+
+#sign-in-form #input-password,
+#sign-up-form-professores #input-password,
+#sign-up-form-professores #input-confirm-password,
+#sign-up-form-alunos #input-password,
+#sign-up-form-alunos #input-confirm-password,
+#sign-up-form-outros #input-password,
+#sign-up-form-outros #input-confirm-password{
+  position: relative;
+}
+
+#sign-in-form #input-password > img{
+  position: absolute;
+  width: 38px;
+  top: 16px;
+  right: 60px;
+  padding: 5px;
+  transition: 0.4s;
+}
+
+#sign-up-form-professores #input-password > img,
+#sign-up-form-professores #input-confirm-password > img,
+#sign-up-form-alunos #input-password > img,
+#sign-up-form-alunos #input-confirm-password > img,
+#sign-up-form-outros #input-password > img,
+#sign-up-form-outros #input-confirm-password > img{
+  position: absolute;
+  width: 38px;
+  top: 16px;
+  right: 25px;
+  padding: 5px;
+  transition: 0.4s;
+}
+
+#sign-in-form #input-password > img:hover,
+#sign-up-form-professores #input-password > img:hover,
+#sign-up-form-professores #input-confirm-password > img:hover,
+#sign-up-form-alunos #input-password > img:hover,
+#sign-up-form-alunos #input-confirm-password > img:hover,
+#sign-up-form-outros #input-password > img:hover,
+#sign-up-form-outros #input-confirm-password > img:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: 0.6s;
+}
+
+#sign-in-form #input-password #password-input-login,
+#sign-up-form-professores #input-password #password-input-cadastro,
+#sign-up-form-professores #input-confirm-password #password-confirm-input-cadastro,
+#sign-up-form-alunos #input-password #password-input-cadastro,
+#sign-up-form-alunos #input-confirm-password #password-confirm-input-cadastro,
+#sign-up-form-outros #input-password #password-input-cadastro,
+#sign-up-form-outros #input-confirm-password #password-confirm-input-cadastro{
+  outline: none;
+}
+
+.box {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.box-div{
+  display: flex;
+  margin: 0 auto;
+  width: 216px;
+  text-align: center;
+}
+
+.type-checkbox {
+  display: none;
+}
+
+.type-checkbox + label {
+  display: block;
+  width: 50px;
+  height: 25px;
+  background-color: #06d6a0;
+  border-radius: 22px;
+  box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.4);
+  transition: all 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.type-checkbox + label:before {
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 28px;
+  transition: left 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+}
+
+.type-checkbox:checked + label {
+  background-color: #ef476f;
+}
+
+.type-checkbox:checked + label:before {
+  left: 8px;
+}
+
+.lembrar{
+  margin-left: 20px;
+}
+
+.lembrar:hover{
+  cursor: pointer; 
 }
 
 .forgot-password{
-  font-size: 12px;
+  font-size: 14px;
+  color: #000;
   display: inline-block;
-  border-bottom: 2px solid #efebeb;
-  padding-bottom: 3px;
+  margin-bottom: 40px;
 }
 
 .forgot-password:hover{
   cursor: pointer;
+  color: #4896fa;
+  transition: 0.25s ease-in-out;
 }
+
+.hide-form {
+  display: none;
+  opacity: 0;
+}
+
+.radio-select-cadastro{
+  width: 400px;
+  margin-bottom: 15px;
+}
+
+.radio-select-cadastro ul{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.radio-select-cadastro ul li{
+  color: #000;
+  display: block;
+  position: relative;
+}
+
+.radio-select-cadastro ul li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.radio-select-cadastro ul li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 0px 0px 0px 35px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+
+.radio-select-cadastro ul li label.space-li-cadastro{
+  margin-right: 28px;
+}
+
+.radio-select-cadastro ul li:hover label{
+  color: #06d6a0;
+}
+
+.radio-select-cadastro ul li .check {
+  display: block;
+  position: absolute;
+  border: 5px solid #000;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+  transition: border .25s linear;
+  -webkit-transition: border .25s linear;
+}
+
+.radio-select-cadastro ul li:hover .check {
+  border: 5px solid #06d6a0;
+}
+
+.radio-select-cadastro ul li .check::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+  height: 5px;
+  width: 5px;
+  top: 5px;
+  left: 5px;
+  margin: auto;
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
+}
+
+.radio-select-cadastro ul li input[type=radio]:checked ~ .check {
+  border: 5px solid #06d6a0;
+}
+
+.radio-select-cadastro ul li input[type=radio]:checked ~ .check::before{
+  background: #06d6a0;
+}
+
+.radio-select-cadastro ul li input[type=radio]:checked ~ label{
+  color: #06d6a0;
+}
+
+.content-animation{
+  display: flex;
+  flex-direction: column;
+}
+
+.content-animation form {
+  margin: 0 auto;
+  height: 400px;
+}
+
+.content-animation form input,
+.content-animation form img,
+.content-animation form .buttons{
+  -webkit-animation: slideUp 1s 0s;
+          animation: slideUp 1s 0s;
+}
+
+
+
+
+
+
+
 
 /* 
 ---------------------------
@@ -257,39 +621,39 @@
 */
 @keyframes slideright{
   0%{
-    clip: rect(0, 385px, var(--form-height), 0);
+    clip: rect(0, 450px, var(--form-height), 0);
   }
   30%{
-        clip: rect(0, 480px, var(--form-height), 0);
+        clip: rect(0, 545px, var(--form-height), 0);
   }
   /*  we want the width to be slightly larger here  */
   50%{
-     clip: rect(0px, calc(var(--form-width) / 2 + 480px / 2), var(--form-height), calc(var(--form-width) / 2 - 480px / 2));
+     clip: rect(0px, calc(var(--form-width) / 2 + 545px / 2), var(--form-height), calc(var(--form-width) / 2 - 545px / 2));
   }
   80%{
-         clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 480px));
+         clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 545px));
   }
   100%{
-     clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 385px));
+     clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 450px));
   }
 }
 
 @keyframes slideleft{
   100%{
-    clip: rect(0, 385px, var(--form-height), 0);
+    clip: rect(0, 450px, var(--form-height), 0);
   }
   70%{
-        clip: rect(0, 480px, var(--form-height), 0);
+        clip: rect(0, 545px, var(--form-height), 0);
   }
   /*  we want the width to be slightly larger here  */
   50%{
-     clip: rect(0px, calc(var(--form-width) / 2 + 480px / 2), var(--form-height), calc(var(--form-width) / 2 - 480px / 2));
+     clip: rect(0px, calc(var(--form-width) / 2 + 545px / 2), var(--form-height), calc(var(--form-width) / 2 - 545px / 2));
   }
   30%{
-         clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 480px));
+         clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 545px));
   }
   0%{
-     clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 385px));
+     clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 450px));
   }
 }
 
@@ -362,5 +726,14 @@
   }
   100%{
     padding-left: 80px;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

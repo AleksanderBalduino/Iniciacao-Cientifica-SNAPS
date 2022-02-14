@@ -1,10 +1,15 @@
 :root{
   --form-height:550px;
   --form-width: 900px;
-  /*  Sea Green */
+
   --left-color: #9fdeaf;
-  /*  Light Blue  */
   --right-color: #96dbe2;
+}
+
+.container {
+  width: 800px;
+  min-width: 800px;
+  margin: 50px auto;
 }
 
 .container-lg{
