@@ -382,9 +382,9 @@ Fim Footer */
 }
 .site-footer .social-icons a
 {
-  width:40px;
-  height:40px;
-  line-height:40px;
+  width:50px;
+  height:50px;
+  line-height:56px;
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
@@ -440,9 +440,15 @@ Fim Footer */
   width:34px;
   font-size:14px
 }
-.social-icons a.facebook:hover
+.social-icons a.instagram:hover
 {
-  background-color:#3b5998
+  background-color:#fff;
+}
+.social-icons i{
+    font-size: 24px;
+}
+.social-icons li a.instagram:hover i.fa-instagram{
+    color: black;
 }
 /* Fim Footer */
 
